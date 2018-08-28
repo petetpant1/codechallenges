@@ -1,8 +1,8 @@
 //This problem solves a codechef medium difficulty challenge
-//http://www.cplusplus.com/articles/DEN36Up4/
+//Problem Code : KPERFMAT
 
 #include <iostream>
-#include "graph.h"
+#include "graph_KPERFMAT.h"
 
 int main(int argc, char *argv[]){
 
@@ -11,11 +11,12 @@ int main(int argc, char *argv[]){
 	// U,V two bipartitions of the graph with |U| = |V| = N , E the edge set
 	//first line. |U|, |E| , K
 	//next line the edges
-	std::cout << "hello graph" << std::endl;
+	std::cout << "Problem KPERFMAT\n" << std::endl;
 
 	int test_params = atoi(argv[3]);
 
-	Graph g = Graph( 2*atoi(argv[1]) , atoi(argv[2]) , test_params );
+	Graph_KPERFMAT g = Graph_KPERFMAT( 2*atoi(argv[1]) , atoi(argv[2]) , test_params);
+
 
 	int more = 1;
 	int vertice1,vertice2;
