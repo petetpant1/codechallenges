@@ -1,0 +1,22 @@
+#include "simple_tree.h"
+#include <iostream>
+
+template <typename T>
+SimpleTree<T>::SimpleTree() {
+}
+
+template <typename T>
+bool SimpleTree<T>::add_node(TreeNode<T>* node){
+
+  std::cout << "inside add node simple Tree" << std::endl;
+
+  return true;
+}
+
+template <> inline
+bool SimpleTree<int>::add_node(TreeNode<int>* node){
+
+  std::cout << "inside add node simple Tree specialized func" << std::endl;
+  return true;
+
+}

@@ -1,0 +1,12 @@
+#include "tree.h"
+
+template <typename T>
+Tree<T>::Tree(){
+  head = new TreeNode<T>;
+  nodes_counter = 0;
+}
+
+template <typename T>
+Tree<T>::~Tree(){
+  delete[] head;
+}
