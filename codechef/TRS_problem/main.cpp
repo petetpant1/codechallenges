@@ -1,10 +1,25 @@
-#include<iostream>
+#include <iostream>
 #include "tree/simple_tree.h"
+
+using namespace std;
 
 int main( int argc , char*argv[] ){
 
-	std::cout << "an output" << std::endl;
+	string file_name;
 
+	cout << "Please enter input file name\n";
+
+	cin >> file_name;
+	cout << "name = " << file_name << "\n";
+
+	SimpleTree<int> s(file_name);
+
+	s.print_edges();
+
+	//ifstream ist(file_name.c_str);
+	//while
+
+	/*
 	TreeNode<int> node;
 
 	node.value = 5;
@@ -18,6 +33,6 @@ int main( int argc , char*argv[] ){
 
 	tree.add_node(NULL);
 	notSpecializedTree.add_node(NULL);
-
+	*/
 	return 1;
 }

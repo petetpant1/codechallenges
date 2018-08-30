@@ -1,10 +1,11 @@
+
 CC=g++
 CFLAGS=-I.
 DEPS = $(wildcard *.h) $(wildcard */*.h)
 SOURCES = $(wildcard *.cpp) $(wildcard */*.cpp)
 
 %.o: $(SOURCES) $(DEPS)
-	$(CC) -c -g $^ $(CFLAGS)
+	$(CC) -c -g -std=c++11 $^ $(CFLAGS)
 
 
 problem: main.o
