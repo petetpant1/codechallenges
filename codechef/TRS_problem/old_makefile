@@ -1,0 +1,16 @@
+CC=g++
+CFLAGS=-I.
+DEPS = $(wildcard *.h) $(wildcard */*.h)
+SOURCES = $(wildcard *.cpp) $(wildcard */*.cpp)
+
+main.o: $(SOURCES) $(DEPS)
+	$(CC) -c -g -std=c++11 $^ $(CFLAGS)
+
+
+problem: main.o
+	$(CC) -g -o main $^
+
+clean:
+	rm main main.o
+  
+

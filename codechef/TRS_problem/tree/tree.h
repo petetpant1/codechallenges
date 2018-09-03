@@ -43,7 +43,7 @@ Tree<T>::Tree(){
 template <typename T>
 Tree<T>::Tree(string filename){
 	//int vertice1,vertice2;
-	int vertice,temp_vertice;
+	int vertice;
 	char temp_char;
 	bool to_many_flag = false;
 
@@ -53,11 +53,10 @@ Tree<T>::Tree(string filename){
 	size_t size ;
 	int buffer_index = 0;
 
-	vector<int> *edge = NULL;
+	vector<int>* edge = NULL;
 
   //INITIALIZE
-	edges_array = new vector< vector<int>* >();
-	//
+	edges_array = new vector< vector<int> *>();
 
 	cout << "filename = " << filename << "\n";
 
@@ -86,12 +85,13 @@ Tree<T>::Tree(string filename){
 			//update buffer with end of string char,convert to string, convert to integer
 			buff[buffer_index] = '\0';
 			number = buff;
-			vertice = stoi ( number );
+			vertice = stoi ( number );	//
+
 			cout << "integer = " << vertice << "\n";
 
 			//store to vectors
 			if ( edge == NULL){
-				edge = new vector<int>(2);
+				edge = new vector<int>();
 				edge->push_back(vertice);
 			}else{
 				edge->push_back(vertice);
@@ -117,10 +117,16 @@ Tree<T>::Tree(string filename){
 template <typename T>
 void Tree<T>::print_edges(){
 	int i;
+	int j;
+
+	cout << "number of edges in the tree = " << edges_array->size() << endl;
 
 	for ( i = 0 ; i < edges_array->size() ; i++){
-		cout << edges_array->at(i)->at(0) << "->";
-		cout << edges_array->at(i)->at(1) << "\n";
+		cout << "sizeof of the " << i << " vector table = " << edges_array->at(i)->size() << endl;
+		for( j = 0 ; j < edges_array->at(i)->size() ; j++){
+			cout << edges_array->at(i)->at(j) << (j ? "" : "->") ;
+		}
+		cout << "\n" ;
 	}
 
 }
