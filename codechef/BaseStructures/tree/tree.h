@@ -16,6 +16,22 @@ public:
   void initialize_tree( input ){
     tree.initialize(input)
   }
+
+  void add_node( node ){
+    tree.add_node( node )
+    if ( !check_tree_consistency() )
+      tree.remove_node( node )
+
+  }
+
+  bool check_tree_consistency(){
+    somehow check if the tree rules are violated, using the T tree and its methods.
+    temp = tree.root()
+    temp = tree.next()
+    if ( temp.depth >= root.depth )
+      error 
+  }
+}
   */
 
 private:
