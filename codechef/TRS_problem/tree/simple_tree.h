@@ -11,7 +11,6 @@ template <typename T>
 class SimpleTree: public Tree<T>{
 public:
   SimpleTree();
-  SimpleTree(string filename);
 
   bool add_node(TreeNode<T>* node);
   //bool find_node(T* node);
@@ -23,10 +22,6 @@ private:
 
 template <typename T>
 SimpleTree<T>::SimpleTree() {
-}
-
-template <typename T>
-SimpleTree<T>::SimpleTree(string filename): Tree<T>::Tree(filename) {
 }
 
 template <typename T>

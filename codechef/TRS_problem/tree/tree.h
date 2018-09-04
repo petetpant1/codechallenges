@@ -15,34 +15,52 @@ template <typename T>
 class Tree
 {
 	public:
-		explicit Tree();
-		explicit Tree(string filename);
-//		~Tree();
+		//empty constructor
+		explicit Tree(){ nodes_counter = 0 }
 
+		//Constructors
+		//There are two possible constructors that you can use to create the tree structure. Each one has a differenct constructor method.
+
+		//(Much more complex) Constructor for tree as a Linked List
+		explicit Tree();
+
+		//1-d array with pointers to TreeNode<T> structures. The index of the array corresponds to the index of the vertice, the edges are in
+		//the edges_array.
+		explicit Tree();
+
+
+	 	//  Destructors
+		//	~Tree();
+
+		void initialize_edges_array(string filename);
 
 		//void breath_first_search();
 		//void depth_first_search();
 		void print_edges();
 
-		virtual bool add_node(TreeNode<T> *) = 0;
+		//virtual bool insert_node(TreeNode<T> *) = 0;
 		//virtual bool find_node(T *) = 0;
 
 	protected:
-		TreeNode<T> *head;
 		int nodes_counter;
+
 		vector< vector<int>* >* edges_array;
 
 };
 
-template <typename T>
-Tree<T>::Tree(){
-  head = new TreeNode<T>;
-  nodes_counter = 0;
-}
 
-template <typename T>
-Tree<T>::Tree(string filename){
-	//int vertice1,vertice2;
+
+/*This function parses a file that contains the edges of the tree and stores them in the edges_array member. We assume that the file contains
+	edges that don't violate the rules of the specific tree.
+ @Params:
+ 		filename : the name of the file to parse for edges.
+ @Brief:
+ 		Each line contains two numbers seperated by whitespace, each number is a vertice index. The line depicts an edge between two vertices
+ @return:
+ 		void
+*/
+Tree<T>::initialize_edges_array(string filename){
+
 	int vertice;
 	char temp_char;
 	bool to_many_flag = false;
